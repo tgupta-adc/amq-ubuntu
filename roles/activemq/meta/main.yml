@@ -19,6 +19,10 @@ galaxy_info:
      versions:
        - "8"
        - "9"
+   - name: Ubuntu
+     versions:
+       - "22.04"
+       - "24.04"
 
   galaxy_tags:
     - activemq
