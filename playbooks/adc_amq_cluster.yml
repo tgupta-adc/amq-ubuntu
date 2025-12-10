@@ -1,0 +1,11 @@
+---
+- name: Playbook to deploy activemq in master/standby with shared datadir
+  hosts: all
+  vars:
+    activemq_ha_enabled: true
+    activemq_disable_hornetq_protocol: true
+    activemq_replication_enabled: true
+    activemq_shared_storage: false
+    activemq_configure_firewalld: true
+  roles:
+   - tgupta-adc.amq-ubuntu.activemq
