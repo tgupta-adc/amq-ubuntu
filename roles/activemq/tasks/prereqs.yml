@@ -16,9 +16,9 @@
 - name: "Ensure target OS is supported."
   ansible.builtin.assert:
     that:
-      - ansible_os_family == "RedHat"
+      - ansible_os_family == "RedHat" or ansible_os_family == "Ubuntu"
     quiet: True
-    fail_msg: "This collection only supports OS from the RedHat family"
+    fail_msg: "This collection only supports OS from the RedHat and Ubuntu family"
   when:
     - ansible_os_family is defined
 
