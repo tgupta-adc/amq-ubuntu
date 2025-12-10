@@ -8,4 +8,4 @@
     activemq_shared_storage: false
     activemq_configure_firewalld: true
   roles:
-   - tgupta-adc.amq-ubuntu.activemq
+   - /root/amq_artemis/amq-ubuntu/roles/activemq
