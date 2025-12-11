@@ -10,6 +10,6 @@ activemq_sysconfig_dir: /etc/default
 activemq_base_package_list:
   - unzip
   - sed
-  - procps-ng
-  - libaio
   - python3-lxml
+  - tar
+  - zip
