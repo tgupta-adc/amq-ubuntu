@@ -161,5 +161,5 @@
 - name: Ensure required packages are installed For Debian
   ansible.builtin.include_tasks: fastpackages-Debian.yml
   vars:
-    packages_list: "{{ activemq.package_list }}"
+    packages_list: "{{ activemq_base_package_list }}"
   when: ansible_os_family == "Debian"
