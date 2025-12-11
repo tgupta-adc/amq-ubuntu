@@ -1,8 +1,0 @@
-activemq_java_package: "openjdk-17-jre-headless"
-acitvemq_libaio_package: "libaio1"
-activemq_netcat_package: "netcat-openbsd"
-activemq_user: "amq-broker"
-actiemq_group: "amq-broker"
-activemq_service_name: "amq-broker--{{ activemq_instance_name }}"
-activemq_firewall_cmd: "ufw"
-activemq_sysconfig_dir: /etc/default
