@@ -4,7 +4,7 @@
     rpm_java_home: "/etc/alternatives/jre_{{ activemq_jvm_package | regex_search('(?<=java-)[0-9.]+') }}"
     when: ansible_os_family == "RedHat" 
   ansible.builtin.set_fact:
-    rpm_java_home: "/usr/lib/jvm/java-{{ activemq_jvm_package | regex_search('(?<=java-)[0-9.]+') }}-openjdk-amd64/"
+    rpm_java_home: "/usr/lib/jvm/java-{{ activemq_jvm_package | regex_search('(?<=openjdk-)[0-9.]+') }}-openjdk-amd64/"
     when: ansible_os_family == "Debian" 
 
 
