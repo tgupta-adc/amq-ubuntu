@@ -1,18 +1,16 @@
 ---
-- name: "Check if packages are already installed" # noqa command-instead-of-module this runs faster
-  ansible.builtin.command: "apt list --installed {{ packages_list | join(' ') }}"
-  register: apt_info
-  changed_when: False
-  failed_when: False
-  
+- name: "Gather installed packages"
+  ansible.builtin.package_facts:
+    manager: apt
 
-- name: "Add missing packages to the install list"
+- name: "Set missing packages to the install list"
   ansible.builtin.set_fact:
-    packages_to_install: "{{ packages_to_install | default([]) + apt_info.stdout_lines | map('regex_findall', 'package (.+) is not installed$') | default([]) | flatten }}"
+    packages_to_install: "{{ packages_list | difference(ansible_facts.packages.keys() | list) }}"
 
 - name: "Install packages: {{ packages_to_install }}"
   become: "{{ activemq_install_requires_become | default(true) }}"
   ansible.builtin.apt:
     name: "{{ packages_to_install }}"
     state: present
+    update_cache: true
   when: packages_to_install | default([]) | length > 0
