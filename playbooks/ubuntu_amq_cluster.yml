@@ -6,5 +6,6 @@
     activemq_disable_hornetq_protocol: true
     activemq_replication_enabled: true
     activemq_shared_storage: false
+    activemq_sysconfig_dir: /etc/default
   roles:
    - /root/amq_artemis/amq-ubuntu/roles/activemq
