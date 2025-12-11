@@ -2,6 +2,11 @@
 - name: Determine JAVA_HOME for selected JVM RPM
   ansible.builtin.set_fact:
     rpm_java_home: "/etc/alternatives/jre_{{ activemq_jvm_package | regex_search('(?<=java-)[0-9.]+') }}"
+    when: ansible_os_family == "RedHat" 
+  ansible.builtin.set_fact:
+    rpm_java_home: "/usr/lib/jvm/java-{{ activemq_jvm_package | regex_search('(?<=java-)[0-9.]+') }}-openjdk-amd64/"
+    when: ansible_os_family == "Debian" 
+
 
 - name: "Ensure privilege is adequate to tasks execution"
   become: "{{ activemq_install_requires_become | default(true) }}"
