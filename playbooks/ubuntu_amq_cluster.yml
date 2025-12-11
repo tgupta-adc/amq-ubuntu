@@ -6,6 +6,8 @@
     activemq_disable_hornetq_protocol: true
     activemq_replication_enabled: true
     activemq_shared_storage: false
+    ### below listed varibale should be moved to Debian.yml vars file
     activemq_sysconfig_dir: /etc/default
+    activemq_java_home: /usr/lib/jvm/java-17-openjdk-amd64/
   roles:
    - /root/amq_artemis/amq-ubuntu/roles/activemq
