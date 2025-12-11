@@ -10,6 +10,7 @@ activemq:  # noqa var-naming false positive
   download_url: "{{ activemq_download_url }}"
   bundle: "{{ activemq_archive }}"
   name: "{{ activemq_name }}"
+  sysconfig_dir: "{{ activemq_sysconfig_dir }}"
   service_name: "{{ activemq_service_name }}"
   instance_name: "{{ activemq_instance_name }}"
   instance_home: "{{ activemq_dest }}/{{ activemq_instance_name }}"

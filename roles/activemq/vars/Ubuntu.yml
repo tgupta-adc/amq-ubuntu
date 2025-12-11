@@ -5,3 +5,4 @@ activemq_user: "amq-broker"
 actiemq_group: "amq-broker"
 activemq_service_name: "amq-broker--{{ activemq_instance_name }}"
 activemq_firewall_cmd: "ufw"
+activemq_sysconfig_dir: /etc/default

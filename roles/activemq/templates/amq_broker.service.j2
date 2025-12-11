@@ -10,10 +10,9 @@ RequiresMountsFor={{ activemq_shared_storage_path }}
 User={{ activemq_service_user }}
 Group={{ activemq_service_group }}
 Type=forking
-EnvironmentFile=-/etc/sysconfig/{{ activemq.instance_name }}
 PIDFile={{ activemq.instance_home }}/{{ activemq_service_pidfile }}
 {% if activemq_systemd_expand_environment %}
-ExecStart=/bin/bash -ac '. /etc/sysconfig/{{ activemq.instance_name }} ; exec {{ activemq.instance_home }}/bin/artemis-service start'
+ExecStart=/bin/bash -ac '. {{ activemq_sysconfig_dir }}/{{ activemq.instance_name }} ; exec {{ activemq.instance_home }}/bin/artemis-service start'
 {% else %}
 ExecStart={{ activemq.instance_home }}/bin/artemis-service start
 {% endif %}
