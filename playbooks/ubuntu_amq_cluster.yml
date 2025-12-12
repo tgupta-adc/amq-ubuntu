@@ -16,21 +16,30 @@
     activemq_jvm_package: openjdk-17-jre-headless
     activemq_acceptors:
       - name: "artemis"
-        port: 61616
-        ssl: false
-        protocols: "CORE,AMQP"
+        scheme: tcp
+        bind_address: {{ activemq_host }}
+        bind_port: 61616
+        parameters:
+          ssl: false
+          protocols: "CORE,AMQP"
       - name: "amqp-internal"
-        port: 45671
-        ssl: false
-        protocols: "CORE,AMQP"
+        scheme: tcp
+        bind_port: 45671
+        parameters:
+          ssl: false
+          protocols: "CORE,AMQP"
       - name: "mqtt-tls"
-        port: 48883
-        ssl: false
-        protocols: "MQTT"
-        serverKeepAlive: 0
+        scheme: tcp
+        bind_port: 48883
+        parameters:
+          ssl: false
+          protocols: "MQTT"
+          serverKeepAlive: 0
       - name: "artemis-internal"
-        port: 48884
-        ssl: false
-        protocols: "AMQP"
+        scheme: tcp
+        bind_port: 48884
+        parameters:
+          ssl: false
+          protocols: "MQTT"
   roles:
    - /root/amq_artemis/amq-ubuntu/roles/activemq
