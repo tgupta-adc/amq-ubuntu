@@ -4,8 +4,12 @@
   vars:
     activemq_ha_enabled: true
     activemq_disable_hornetq_protocol: true
+    activemq_installdir: "/opt/amq/apache-artemis-{{ activemq_version }}"
+    activemq_dest: /var/lib/brokers
     activemq_replication_enabled: true
     activemq_shared_storage: false
+    activemq_version: 2.42.0
+    activemq_instance_name: "{{ ansible_hostname }}"
     ### below listed varibale should be moved to Debian.yml vars file
     activemq_sysconfig_dir: /etc/default
     activemq_java_home: /usr/lib/jvm/java-17-openjdk-amd64/
