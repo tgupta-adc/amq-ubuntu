@@ -49,8 +49,5 @@
         parameters:
           ssl: false
           protocols: "MQTT"
-    activemq_connectors:
-      - name: "artemis"
-        uri: "tcp://{{ activemq_bind_address }}:61616"
   roles:
    - /root/amq_artemis/amq-ubuntu/roles/activemq
