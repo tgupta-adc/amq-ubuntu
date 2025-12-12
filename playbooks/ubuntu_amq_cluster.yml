@@ -16,6 +16,8 @@
     activemq_jvm_package: openjdk-17-jre-headless
     activemq_java_opts_mem: '-Xms20G -Xmx20G'
     activemq_global_max_size: 4GB
+    activemq_paging_directory: /mnt/amq_paging/data/paging
+    activemq_journal_directory: /mnt/amq_journal/data/journal
     activemq_acceptors:
       - name: "artemis"
         scheme: tcp
