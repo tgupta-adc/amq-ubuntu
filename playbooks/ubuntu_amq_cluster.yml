@@ -17,7 +17,7 @@
     activemq_acceptors:
       - name: "artemis"
         scheme: tcp
-        bind_address: {{ activemq_host }}
+        bind_address: "{{ activemq_host }}""
         bind_port: 61616
         parameters:
           ssl: false
