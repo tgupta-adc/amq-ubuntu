@@ -13,7 +13,7 @@ activemq:  # noqa var-naming false positive
   sysconfig_dir: "{{ activemq_sysconfig_dir }}"
   service_name: "{{ activemq_service_name }}"
   instance_name: "{{ activemq_instance_name }}"
-  instance_home: "{{ activemq_instance_dest }}/{{ activemq_instance_name }}"
+  instance_home: "{{ activemq_dest }}/{{ activemq_instance_name }}"
   config_xsd: "https://github.com/apache/activemq-artemis/raw/{{ activemq_version }}/artemis-server/src/main/resources/schema/artemis-configuration.xsd"
   server_xsd: "https://github.com/apache/activemq-artemis/raw/{{ activemq_version }}/artemis-server/src/main/resources/schema/artemis-server.xsd"
   package_list: "{{ activemq_base_package_list + [activemq_jvm_package] + \
