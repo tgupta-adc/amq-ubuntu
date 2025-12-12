@@ -18,6 +18,7 @@
     activemq_global_max_size: 4GB
     activemq_paging_directory: /mnt/amq_paging/data/paging
     activemq_journal_directory: /mnt/amq_journal/data/journal
+    activemq_logger_filepath: /mnt/amq_log/log/artemis.log
     activemq_acceptors:
       - name: "artemis"
         scheme: tcp
